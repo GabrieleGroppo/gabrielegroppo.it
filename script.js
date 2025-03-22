@@ -47,3 +47,26 @@
     // Inizializzazione
     window.addEventListener('load', createStars);
     window.addEventListener('scroll', handleScroll);
+
+    <h2 class="about-title" id="cli-title"></h2>
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const title = document.getElementById("cli-title");
+        const text = "whomi";
+        const prompt = "gabriele@linux:~$ ";
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                title.innerHTML = `<span style="color:#8be9fd;">${prompt}</span>${text.substring(0, index + 1)}<span class="cursor">█</span>`;
+                index++;
+                setTimeout(typeEffect, 100);
+            } else {
+                title.innerHTML = `<span style="color:#8be9fd;">${prompt}</span>${text}`;
+            }
+        }
+
+        typeEffect();
+    });
+

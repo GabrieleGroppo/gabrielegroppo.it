@@ -13,7 +13,11 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    /*font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;*/
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
     background-color: var(--sepia-light);
     color: var(--text);
     overflow-x: hidden;
@@ -421,4 +425,32 @@ footer {
 
 .important-skill {
     background-color: var(--accent);
+}
+
+/* whomi */
+
+.cursor {
+    animation: blink 0.7s steps(2, start) infinite;
+    color: #50fa7b;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.about-title {
+    font-family: monospace;
+    color: #50fa7b; /* Verde - colore tipico per comandi CLI */
+    background-color: #282a36; /* Sfondo scuro Dracula */
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    position: relative;
+}
+
+.about-title::before {
+    content: "user@linux:~$ ";
+    color: #8be9fd; /* Blu - colore tipico per il prompt */
 }
