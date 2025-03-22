@@ -427,6 +427,14 @@ footer {
     background-color: var(--accent);
 }
 
+.not-skill {
+    background-color: var(--sepia-light);
+}
+
+.not-skill:hover {
+    background-color: red;
+}
+
 /* whomi */
 
 .cursor {
@@ -451,6 +459,17 @@ footer {
 }
 
 .about-title::before {
-    content: "user@linux:~$ ";
+    content: "gabriele@linux:~$ ";
     color: #8be9fd; /* Blu - colore tipico per il prompt */
+}
+
+.cursor {
+    animation: blink 0.7s steps(2, start) infinite;
+    color: #50fa7b;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
 }
