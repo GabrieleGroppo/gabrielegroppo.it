@@ -49,7 +49,7 @@ body {
 
 .nav.scrolled {
     background-color: var(--sepia);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 1rem 5%;
 }
 
@@ -121,7 +121,7 @@ body {
     position: absolute;
     border-radius: 50%;
     background: var(--sepia);
-    box-shadow: inset -30px -30px 50px rgba(0,0,0,0.2);
+    box-shadow: inset -30px -30px 50px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -157,7 +157,7 @@ body {
 
 .cta-button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 section {
@@ -248,13 +248,13 @@ section {
     background-color: var(--sepia);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .project-img {
@@ -341,7 +341,7 @@ textarea.form-control {
 
 .submit-btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -361,6 +361,26 @@ footer {
     margin-top: 1rem;
 }
 
+/* Social links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.social-links a {
+    color: var(--accent);
+    font-size: 24px;
+    transition: 0.3s;
+    background-color: transparent;
+}
+
+.social-links a:hover {
+    color: var(--sepia-light);
+}
+
 .social-link {
     color: var(--text);
     font-size: 1.2rem;
@@ -376,12 +396,29 @@ footer {
         flex-direction: column;
         gap: 2rem;
     }
-    
+
     .about-img {
         min-width: 100%;
     }
-    
+
     .nav-links {
         display: none;
     }
+}
+
+.skill {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--sepia-dark); /* Colore uniforme */
+    color: var(--text); /* Testo leggibile */
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.skill:hover {
+    background-color: var(--sepia-light);
+}
+
+.important-skill {
+    background-color: var(--accent);
 }
