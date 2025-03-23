@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
-    <script src="script.js"></script>
+    <!-- Script viene caricato dopo che il DOM è completamente caricato -->
 </head>
 
 <body>
@@ -22,30 +22,21 @@
     <nav class="nav" id="navbar">
         <div class="logo">Gabriele Groppo</div>
         <div class="nav-links">
-            <a href="#about" class="nav-link">Whomi</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#contact" class="nav-link">Contacts</a>
+            <a href="index.html#about" class="nav-link">Whomi</a>
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <a href="index.html#certifications" class="nav-link">Certifications</a>
+            <a href="index.html#experiences" class="nav-link">Experiences</a>
+            <a href="index.html#contact" class="nav-link">Contacts</a>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="home-hero">
         <div class="planet" id="planet1"></div>
         <div class="planet" id="planet2"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Hi there! I am Gabriele</h1>
+            <h1 class="hero-title" id="home-title">Hi there! I am Gabriele</h1>
             <p class="hero-subtitle">Software engineer & Developer</p>
             <a href="#projects" class="cta-button">Discover my projects</a>
-        </div>
-        <div class="scroll-indicator-container">
-            <div class="scroll-indicator">
-                <div class="scroll-text">Scopri di più</div>
-                <div class="scroll-arrow">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -57,7 +48,7 @@
             </div>
         </div>
         <div class="about-content">
-            <h2 class="about-title" id="cli-title">whomi</h2>
+            <h2 class="cli-title" id="cli-title">whomi</h2>
             <p class="about-text">I'm a <b>computer science student</b> with a deep passion for the world of programming and <b>software</b> development. I'm particularly enthusiastic about <b>Linux</b> and the principles of Open Source. Beyond the digital realm, I'm also a big fan of the mountains and spending time with my dog <b>Sansone</b>. I have a keen interest in the intersection of design and technology.</p>
             <p class="about-text">I'm excited to showcase my skills and <b>projects</b> in this <b>portfolio</b>.</p>
             <div class="skills">
@@ -79,7 +70,7 @@
                     <h3 class="project-title">Multi Sheet Awesome Photo Renamer</h3>
                     <p class="project-text">Python script to semplify & improve mangagement of business related graphical resources.</p>
                     <div class="project-links">
-                        <a href="#" class="project-link">Vedi progetto</a>
+                        <a href="https://github.com/GabrieleGroppo/MultiSheetPhotoRenamer" class="project-link">Vedi progetto</a>
                     </div>
                 </div>
             </div>
@@ -89,7 +80,7 @@
                     <h3 class="project-title">Banda 4 Giugno Website</h3>
                     <p class="project-text">Official Website of Banda 4 Giugno 1859.</p>
                     <div class="project-links">
-                        <a href="#" class="project-link">Vedi progetto</a>
+                        <a href="https://github.com/GabrieleGroppo/banda-4-giugno" class="project-link">Vedi progetto</a>
                     </div>
                 </div>
             </div>
@@ -99,13 +90,95 @@
                     <h3 class="project-title">DoIT</h3>
                     <p class="project-text">Volunteering platform (frontend + backend) to post volunteer requests and releted offers.</p>
                     <div class="project-links">
-                        <a href="#" class="project-link">Vedi progetto</a>
+                        <a href="https://github.com/GabrieleGroppo/DoIT" class="project-link">Vedi progetto</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <section class="certifications" id="certifications">
+        <h2 class="section-title">Certifications & Courses</h2>
+        
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-java"></i></div>
+                <h3 class="cert-title">Java Programming</h3>
+                <p class="cert-issuer">Oracle Certified Associate</p>
+                <p class="cert-date">2023</p>
+            </div>
+            
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-linux"></i></div>
+                <h3 class="cert-title">Linux System Administration</h3>
+                <p class="cert-issuer">Linux Professional Institute</p>
+                <p class="cert-date">2022</p>
+            </div>
+            
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fas fa-database"></i></div>
+                <h3 class="cert-title">SQL Database Design</h3>
+                <p class="cert-issuer">Microsoft</p>
+                <p class="cert-date">2023</p>
+            </div>
+        </div>
+    </section>
+    <section class="timeline-section" id="experiences">
+        <h1 class="section-title">Experiences</h1>
+        <h2 class="cli-title" id="experiences-title">cat education.log</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content education">
+                    <div class="timeline-date">2022 - Present</div>
+                    <h3 class="timeline-title">Bachelor in Computer Science</h3>
+                    <p class="timeline-location">University of Milan Bicocca</p>
+                    <p class="timeline-text">Currently pursuing a degree in Computer Science with a focus on software engineering. Working on projects involving Java, algorithms, and data structures.</p>
+                    <div class="timeline-tags">
+                        <span class="tag">Programming</span>
+                        <span class="tag">Algorithms</span>
+                        <span class="tag">Software Engineering</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content education">
+                    <div class="timeline-date">2017 - 2022</div>
+                    <h3 class="timeline-title">Information Tecnology Diploma</h3>
+                    <p class="timeline-location">ITIS E. Alessandrini Vittuone</p>
+                    <p class="timeline-text">IT studies with focus in OOP & relational databases</p>
+                    <div class="timeline-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Js</span>
+                        <span class="tag">C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="work-title cli-title" id="work-title">tail -f work_experience.log</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content work">
+                    <div class="timeline-date">2024 - Present</div>
+                    <h3 class="timeline-title">IT Assistant</h3>
+                    <p class="timeline-location">Mendino SRL</p>
+                    <p class="timeline-text">Worked on python scripts to improve website content mangagement.</p>
+                    <div class="timeline-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Wordpress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="cta-container">
+            <a href="/resume.pdf" class="cta-button download-resume"><i class="fas fa-download"></i> Download Full CV</a>
+        </div>
+    </section>
     <section class="contact" id="contact">
         <h2 class="section-title">Contact me!</h2>
         <div class="contact-form">
@@ -126,7 +199,9 @@
             </form>
         </div>
     </section>
-
+    <!-- Back to top -->
+    <a class="back-to-top" href="#home-hero"><i class="fa fa-arrow-up"></i></a>
+    <!-- Footer -->
     <footer>
         <p class="footer-text">Thank you!</p>
         <div class="social-links">
@@ -136,11 +211,14 @@
             <a href="https://www.facebook.com" target="_blank">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a href="https://github.com/GabrieleGroppo" target="_blank">
+            <a href="https://github.com/GabrieleGroppo/gabrielegroppo.it" target="_blank">
                 <i class="fab fa-github"></i>
             </a>
         </div>
     </footer>
+    
+    <!-- Spostato lo script qui sotto per assicurarsi che il DOM sia caricato -->
+    <script src="script.js"></script>
 </body>
 
 </html>

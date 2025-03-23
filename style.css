@@ -1,4 +1,7 @@
-:root {
+/* ============================
+   CSS VARIABLES & RESET
+   ============================ */
+   :root {
     --sepia: #E6DACA;
     --sepia-dark: #C2B8A3;
     --sepia-light: #F5F0E8;
@@ -12,8 +15,10 @@
     box-sizing: border-box;
 }
 
+/* ============================
+   BASE STYLES
+   ============================ */
 body {
-    /*font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;*/
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
     font-weight: normal;
@@ -23,6 +28,9 @@ body {
     overflow-x: hidden;
 }
 
+/* ============================
+   BACKGROUND ELEMENTS
+   ============================ */
 .stars {
     position: fixed;
     top: 0;
@@ -40,6 +48,33 @@ body {
     opacity: 0.6;
 }
 
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--sepia);
+    box-shadow: inset -30px -30px 50px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+#planet1 {
+    width: 300px;
+    height: 300px;
+    top: -80px;
+    right: -100px;
+    background: linear-gradient(135deg, var(--sepia), var(--sepia-dark));
+}
+
+#planet2 {
+    width: 150px;
+    height: 150px;
+    bottom: 50px;
+    left: 100px;
+    background: linear-gradient(135deg, var(--sepia-dark), var(--sepia));
+}
+
+/* ============================
+   NAVIGATION
+   ============================ */
 .nav {
     display: flex;
     justify-content: space-between;
@@ -91,6 +126,9 @@ body {
     width: 100%;
 }
 
+/* ============================
+   HERO SECTION
+   ============================ */
 .hero {
     height: 100vh;
     display: flex;
@@ -101,6 +139,11 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.experiences-hero {
+    height: 60vh;
+    min-height: 400px;
 }
 
 .hero-content {
@@ -121,30 +164,9 @@ body {
     font-weight: 300;
 }
 
-.planet {
-    position: absolute;
-    border-radius: 50%;
-    background: var(--sepia);
-    box-shadow: inset -30px -30px 50px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-#planet1 {
-    width: 300px;
-    height: 300px;
-    top: -80px;
-    right: -100px;
-    background: linear-gradient(135deg, var(--sepia), var(--sepia-dark));
-}
-
-#planet2 {
-    width: 150px;
-    height: 150px;
-    bottom: 50px;
-    left: 100px;
-    background: linear-gradient(135deg, var(--sepia-dark), var(--sepia));
-}
-
+/* ============================
+   BUTTONS & CALL TO ACTION
+   ============================ */
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
@@ -164,6 +186,64 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.submit-btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.download-resume {
+    background-color: #ff79c6; /* Dracula pink */
+}
+
+.download-resume:hover {
+    background-color: #ff92d0;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent);
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 99;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    opacity: 0.7;
+}
+  
+.back-to-top:hover {
+    background-color: var(--sepia-light);
+    opacity: 1;
+}
+
+/* ============================
+   SECTION GENERAL STYLES
+   ============================ */
 section {
     padding: 100px 5%;
 }
@@ -186,6 +266,20 @@ section {
     background-color: var(--accent);
 }
 
+/* Positioning for experience section titles */
+.section-title#experiences-title,
+.section-title#work-title {
+    margin-left: 15%;
+    text-align: left;
+}
+
+.work-title {
+    margin-top: 80px;
+}
+
+/* ============================
+   ABOUT SECTION
+   ============================ */
 .about {
     display: flex;
     align-items: center;
@@ -224,6 +318,40 @@ section {
     margin-bottom: 2rem;
 }
 
+/* ============================
+   CLI STYLING
+   ============================ */
+.cli-title {
+    font-family: "JetBrains Mono", monospace;
+    color: #50fa7b; /* Verde - colore tipico per comandi CLI */
+    background-color: #282a36; /* Sfondo scuro Dracula */
+    padding: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    position: relative;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cli-title::before {
+    content: ""; /* Il prompt verrà aggiunto via JavaScript */
+    color: #8be9fd; /* Blu - colore tipico per il prompt */
+}
+
+.cursor {
+    animation: blink 0.7s steps(2, start) infinite;
+    color: #50fa7b;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ============================
+   SKILLS
+   ============================ */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -233,11 +361,32 @@ section {
 
 .skill {
     padding: 0.5rem 1.5rem;
-    background-color: var(--sepia-light);
+    background-color: var(--sepia-dark);
+    color: var(--text);
     border-radius: 50px;
     font-weight: 500;
+    cursor: pointer;
 }
 
+.skill:hover {
+    background-color: var(--sepia-light);
+}
+
+.important-skill {
+    background-color: var(--accent);
+}
+
+.not-skill {
+    background-color: var(--sepia-light);
+}
+
+.not-skill:hover {
+    background-color: red;
+}
+
+/* ============================
+   PROJECTS SECTION
+   ============================ */
 .projects {
     background-color: var(--sepia-light);
 }
@@ -295,6 +444,179 @@ section {
     font-size: 0.9rem;
 }
 
+/* ============================
+   TIMELINE & EXPERIENCES
+   ============================ */
+.timeline-section {
+    padding: 120px 5%;
+    background-color: var(--sepia-light);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: var(--accent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.timeline-content {
+    position: relative;
+    width: calc(50% - 40px);
+    padding: 20px;
+    background-color: var(--sepia);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    left: calc(50% + 40px);
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: var(--accent);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.timeline-title {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.timeline-location {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.timeline-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    background-color: var(--sepia-dark);
+    color: var(--text);
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.education .timeline-date {
+    background-color: #50fa7b; /* Dracula green for education */
+    color: var(--text);
+}
+
+.work .timeline-date {
+    background-color: #bd93f9; /* Dracula purple for work */
+}
+
+/* ============================
+   CERTIFICATIONS
+   ============================ */
+.certifications {
+    padding: 100px 5%;
+    background-color: var(--sepia);
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cert-card {
+    background-color: var(--sepia-light);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cert-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.cert-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.cert-issuer {
+    font-size: 0.9rem;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+.cert-date {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* ============================
+   CONTACT SECTION
+   ============================ */
 .contact {
     background-color: var(--sepia);
     text-align: center;
@@ -330,24 +652,9 @@ textarea.form-control {
     resize: vertical;
 }
 
-.submit-btn {
-    display: inline-block;
-    padding: 1rem 3rem;
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.submit-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
+/* ============================
+   FOOTER & SOCIAL LINKS
+   ============================ */
 footer {
     background-color: var(--sepia-dark);
     padding: 2rem 5%;
@@ -363,13 +670,6 @@ footer {
     justify-content: center;
     gap: 1.5rem;
     margin-top: 1rem;
-}
-
-/* Social links */
-.social-links {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
     padding: 20px;
     background-color: transparent;
 }
@@ -395,6 +695,9 @@ footer {
     transform: translateY(-5px);
 }
 
+/* ============================
+   MEDIA QUERIES
+   ============================ */
 @media screen and (max-width: 768px) {
     .about {
         flex-direction: column;
@@ -408,68 +711,81 @@ footer {
     .nav-links {
         display: none;
     }
-}
-
-.skill {
-    padding: 0.5rem 1.5rem;
-    background-color: var(--sepia-dark); /* Colore uniforme */
-    color: var(--text); /* Testo leggibile */
-    border-radius: 50px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.skill:hover {
-    background-color: var(--sepia-light);
-}
-
-.important-skill {
-    background-color: var(--accent);
-}
-
-.not-skill {
-    background-color: var(--sepia-light);
-}
-
-.not-skill:hover {
-    background-color: red;
-}
-
-/* whomi */
-
-.cursor {
-    animation: blink 0.7s steps(2, start) infinite;
-    color: #50fa7b;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-dot {
+        left: 30px;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 80px);
+        left: 80px !important;
+    }
+    
+    .section-title#experiences-title,
+    .section-title#work-title {
+        margin-left: 0;
+        display: block;
+        text-align: center;
     }
 }
 
-.about-title {
-    font-family: monospace;
-    color: #50fa7b; /* Verde - colore tipico per comandi CLI */
-    background-color: #282a36; /* Sfondo scuro Dracula */
-    padding: 10px;
-    display: inline-block;
-    border-radius: 5px;
+/* ============================
+   ANIMATIONS REVEAL IMAGE
+   ============================ */
+   /* Versione alternativa con effetto spotlight */
+
+/* Aggiungi questo codice al tuo file style.css esistente */
+
+/* Stile per il contenitore hero per gestire l'effetto di sovrapposizione */
+.hero {
     position: relative;
+    overflow: hidden;
 }
 
-.about-title::before {
-    content: "gabriele@linux:~$ ";
-    color: #8be9fd; /* Blu - colore tipico per il prompt */
+/* Immagine di sfondo da rivelare (posizionata dietro il contenuto) */
+.reveal-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background.jpg'); /* Sostituisci con il percorso della tua immagine */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0; /* Nascosta di default */
 }
 
-.cursor {
-    animation: blink 0.7s steps(2, start) infinite;
-    color: #50fa7b;
+/* Cerchio che rivela l'immagine nascosta */
+.reveal-circle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    /* Effetto maschera che rivela l'immagine sottostante */
+    box-shadow: 0 0 0 9999px rgba(245, 240, 232, 0.85); /* Colore del tuo sfondo con un po' di trasparenza */
+    mix-blend-mode: screen;
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+/* Assicuriamoci che il contenuto hero sia sopra gli elementi di sfondo */
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* Modifica per rendere visibile l'immagine di sfondo quando il cerchio è attivo */
+.hero:hover .reveal-image {
+    opacity: 1;
 }
