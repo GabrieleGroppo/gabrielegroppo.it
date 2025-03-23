@@ -78,16 +78,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Crea il cerchio e lo aggiunge al body
-    const cursorCircle = document.createElement("div");
-    cursorCircle.className = "cursor-circle";
-    document.body.appendChild(cursorCircle);
-
-    // Sposta il cerchio col mouse
-    document.addEventListener("mousemove", function(e) {
-        cursorCircle.style.left = `${e.clientX}px`;
-        cursorCircle.style.top = `${e.clientY}px`;
-    });
-});

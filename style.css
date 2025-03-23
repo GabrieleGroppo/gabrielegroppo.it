@@ -732,21 +732,3 @@ footer {
         text-align: center;
     }
 }
-
-/* ============================
-   ANIMATIONS CUSTM CIRCLE
-   ============================ */
-   /* Versione alternativa con effetto spotlight */
-
-/* Aggiungi questo codice al tuo file style.css esistente */
-
-.cursor-circle {
-    position: fixed;
-    width: 150px;  /* Dimensione grande */
-    height: 150px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2); /* Effetto di trasparenza */    
-    pointer-events: none; /* Evita interferenze con i click */
-    transform: translate(-50%, -50%);
-    transition: transform 0.05s linear;
-}
