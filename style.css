@@ -769,6 +769,12 @@ footer {
         display: block;
         text-align: center;
     }
+
+    /*hide planets on mobile*/
+    #planet3,
+    #planet4 {
+        display: none;
+    }
 }
 
 /* email */
