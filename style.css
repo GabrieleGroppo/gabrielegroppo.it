@@ -1,12 +1,16 @@
 /* ============================
    CSS VARIABLES & RESET
    ============================ */
-   :root {
+:root {
     --sepia: #E6DACA;
     --sepia-dark: #C2B8A3;
     --sepia-light: #F5F0E8;
     --text: #3A3238;
     --accent: #8E7F7F;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -205,7 +209,8 @@ body {
 }
 
 .download-resume {
-    background-color: #ff79c6; /* Dracula pink */
+    background-color: #ff79c6;
+    /* Dracula pink */
 }
 
 .download-resume:hover {
@@ -235,7 +240,7 @@ body {
     transition: background-color 0.3s ease;
     opacity: 0.7;
 }
-  
+
 .back-to-top:hover {
     background-color: var(--sepia-light);
     opacity: 1;
@@ -323,7 +328,8 @@ section {
    ============================ */
 .cli-title {
     font-family: "JetBrains Mono", monospace;
-    background-color: #282a36; /* Sfondo scuro Dracula */
+    background-color: #282a36;
+    /* Sfondo scuro Dracula */
     padding: 10px;
     display: inline-block;
     border-radius: 5px;
@@ -333,8 +339,10 @@ section {
 }
 
 .cli-title::before {
-    content: ""; /* Il prompt verrà aggiunto via JavaScript */
-    color: #8be9fd; /* Blu - colore tipico per il prompt */
+    content: "";
+    /* Il prompt verrà aggiunto via JavaScript */
+    color: #8be9fd;
+    /* Blu - colore tipico per il prompt */
 }
 
 .cursor {
@@ -553,12 +561,14 @@ section {
 }
 
 .education .timeline-date {
-    background-color: #50fa7b; /* Dracula green for education */
+    background-color: #50fa7b;
+    /* Dracula green for education */
     color: var(--text);
 }
 
 .work .timeline-date {
-    background-color: #bd93f9; /* Dracula purple for work */
+    background-color: #bd93f9;
+    /* Dracula purple for work */
 }
 
 /* ============================
@@ -710,20 +720,20 @@ footer {
     .nav-links {
         display: none;
     }
-    
+
     .timeline::before {
         left: 30px;
     }
-    
+
     .timeline-dot {
         left: 30px;
     }
-    
+
     .timeline-content {
         width: calc(100% - 80px);
         left: 80px !important;
     }
-    
+
     .section-title#experiences-title,
     .section-title#work-title {
         margin-left: 0;
@@ -749,6 +759,22 @@ footer {
 /* bento section */
 .bento-section {
     padding: 100px 5%;
+    background-color: var(--sepia-dark);
+}
+
+/* github activity */
+.github-section {
+    padding: 100px 5%;
     background-color: var(--sepia-light);
 }
 
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.cert-message {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    /*Dracula error color */
+}
