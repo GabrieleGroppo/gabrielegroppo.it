@@ -73,7 +73,35 @@ body {
     height: 150px;
     bottom: 50px;
     left: 100px;
-    background: linear-gradient(135deg, var(--sepia-dark), var(--sepia));
+    /*background: linear-gradient(135deg, var(--sepia-dark), var(--sepia));*/
+    background-image: url(images/sansone.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#planet3 {
+    width: 200px;
+    height: 200px;
+    bottom: 100px;
+    right: 50px;
+    /*background: linear-gradient(135deg, var(--sepia-dark), var(--sepia));*/
+    background-image: url(images/tunisia.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#planet4 {
+    width: 250px;
+    height: 250px;
+    top: 75px;
+    left: 50px;
+    /*background: linear-gradient(135deg, var(--sepia-dark), var(--sepia));*/
+    background-image: url(images/mountain.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* ============================
@@ -347,7 +375,8 @@ section {
 
 .cursor {
     animation: blink 0.7s steps(2, start) infinite;
-    color: #50fa7b;
+    /* Blinking cursor default color cyan by dracula */
+    color: #8be9fd;
 }
 
 @keyframes blink {
