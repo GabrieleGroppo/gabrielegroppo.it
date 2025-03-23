@@ -323,7 +323,7 @@ section {
    ============================ */
 .cli-title {
     font-family: "JetBrains Mono", monospace;
-    color: #50fa7b; /* Verde - colore tipico per comandi CLI */
+    
     background-color: #282a36; /* Sfondo scuro Dracula */
     padding: 10px;
     display: inline-block;
@@ -381,7 +381,7 @@ section {
 }
 
 .not-skill:hover {
-    background-color: red;
+    background-color: #FF5555;
 }
 
 /* ============================
@@ -731,4 +731,18 @@ footer {
         display: block;
         text-align: center;
     }
+}
+
+/* email */
+.contact-link {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: none;
+    /*add some space to the top*/
+    display: block;
+    margin-top: 1rem;
+}
+
+.contact-link:hover {
+    color: var(--text);
 }
