@@ -79,38 +79,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Aggiungi questo codice al tuo file script.js esistente
 document.addEventListener("DOMContentLoaded", function() {
-    // Riferimento alla sezione hero
-    const heroSection = document.getElementById('home-hero');
-    
-    // Crea un elemento per l'immagine di sfondo nascosta
-    const revealImage = document.createElement('div');
-    revealImage.className = 'reveal-image';
-    heroSection.appendChild(revealImage);
-    
-    // Crea l'elemento per il cerchio rivelatore
-    const revealCircle = document.createElement('div');
-    revealCircle.className = 'reveal-circle';
-    heroSection.appendChild(revealCircle);
-    
-    // Gestione del movimento del mouse sulla sezione hero
-    heroSection.addEventListener('mousemove', function(e) {
-        // Ottieni le coordinate relative alla sezione hero
-        const rect = heroSection.getBoundingClientRect();
-        const mouseX = e.clientX - rect.left;
-        const mouseY = e.clientY - rect.top;
-        
-        // Aggiorna la posizione del cerchio rivelatore
-        revealCircle.style.left = mouseX + 'px';
-        revealCircle.style.top = mouseY + 'px';
-        
-        // Mostra il cerchio rivelatore quando il mouse è sulla sezione
-        revealCircle.style.opacity = '1';
-    });
-    
-    // Nascondi il cerchio rivelatore quando il mouse esce dalla sezione
-    heroSection.addEventListener('mouseleave', function() {
-        revealCircle.style.opacity = '0';
+    // Crea il cerchio e lo aggiunge al body
+    const cursorCircle = document.createElement("div");
+    cursorCircle.className = "cursor-circle";
+    document.body.appendChild(cursorCircle);
+
+    // Sposta il cerchio col mouse
+    document.addEventListener("mousemove", function(e) {
+        cursorCircle.style.left = `${e.clientX}px`;
+        cursorCircle.style.top = `${e.clientY}px`;
     });
 });

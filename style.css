@@ -734,58 +734,19 @@ footer {
 }
 
 /* ============================
-   ANIMATIONS REVEAL IMAGE
+   ANIMATIONS CUSTM CIRCLE
    ============================ */
    /* Versione alternativa con effetto spotlight */
 
 /* Aggiungi questo codice al tuo file style.css esistente */
 
-/* Stile per il contenitore hero per gestire l'effetto di sovrapposizione */
-.hero {
-    position: relative;
-    overflow: hidden;
-}
-
-/* Immagine di sfondo da rivelare (posizionata dietro il contenuto) */
-.reveal-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/background.jpg'); /* Sostituisci con il percorso della tua immagine */
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0; /* Nascosta di default */
-}
-
-/* Cerchio che rivela l'immagine nascosta */
-.reveal-circle {
-    position: absolute;
-    width: 150px;
+.cursor-circle {
+    position: fixed;
+    width: 150px;  /* Dimensione grande */
     height: 150px;
     border-radius: 50%;
-    background-color: transparent;
+    background: rgba(255, 255, 255, 0.2); /* Effetto di trasparenza */    
+    pointer-events: none; /* Evita interferenze con i click */
     transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    
-    /* Effetto maschera che rivela l'immagine sottostante */
-    box-shadow: 0 0 0 9999px rgba(245, 240, 232, 0.85); /* Colore del tuo sfondo con un po' di trasparenza */
-    mix-blend-mode: screen;
-}
-
-/* Assicuriamoci che il contenuto hero sia sopra gli elementi di sfondo */
-.hero-content {
-    position: relative;
-    z-index: 3;
-}
-
-/* Modifica per rendere visibile l'immagine di sfondo quando il cerchio è attivo */
-.hero:hover .reveal-image {
-    opacity: 1;
+    transition: transform 0.05s linear;
 }
