@@ -63,9 +63,12 @@ body {
 #planet1 {
     width: 300px;
     height: 300px;
-    top: -80px;
+    top: 100px;
     right: -100px;
-    background: linear-gradient(135deg, var(--sepia), var(--sepia-dark));
+    background-image: url(images/tunisia.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #planet2 {
@@ -86,7 +89,7 @@ body {
     bottom: 100px;
     right: 50px;
     /*background: linear-gradient(135deg, var(--sepia-dark), var(--sepia));*/
-    background-image: url(images/tunisia.jpg);
+    background-image: url(images/mountain.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -98,7 +101,7 @@ body {
     top: 75px;
     left: 50px;
     /*background: linear-gradient(135deg, var(--sepia-dark), var(--sepia));*/
-    background-image: url(images/mountain.jpg);
+    background-image: url(images/portrait.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -812,4 +815,23 @@ footer {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     /*Dracula error color */
+}
+
+/* spotify */
+.spotify-section {
+    padding: 100px 5%;
+    background-color: var(--sepia);
+}
+.spotify-widget {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 50%;
+}
+
+.birthdate {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
 }
