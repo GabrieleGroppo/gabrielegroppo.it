@@ -778,6 +778,9 @@ footer {
     #planet4 {
         display: none;
     }
+#planet1 {
+background: linear-gradient(135deg, var(--sepia-dark), var(--sepia));
+}
 }
 
 /* email */
