@@ -153,3 +153,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollIndicator = document.querySelector(".scroll-down");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 100) {
+            scrollIndicator.classList.add("hidden");
+        } else {
+            scrollIndicator.classList.remove("hidden");
+        }
+    });
+});

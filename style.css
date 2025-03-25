@@ -1050,3 +1050,42 @@ body {
 .dark-theme .mobile-menu-toggle .bar {
     background-color: var(--text);
 }
+
+/* Animazione freccia scroll */
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 35px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><path d="M12 16.5l-6-6 1.5-1.5L12 13.5l4.5-4.5L18 10.5l-6 6z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    animation: bounce 1.5s infinite;
+    cursor: pointer;
+    transition: opacity 0.3s, filter 0.3s;
+}
+
+/* Animazione rimbalzo */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* Nascondi la freccia quando l'utente scorre */
+.scroll-down.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Cambia colore della freccia in modalità dark */
+.dark-theme .scroll-down {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 16.5l-6-6 1.5-1.5L12 13.5l4.5-4.5L18 10.5l-6 6z"/></svg>');
+}
+
