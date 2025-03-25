@@ -1037,3 +1037,16 @@ body {
 .timeline-content {
     background-color: var(--sepia);
 }
+
+/* Dark Theme Adjustments */
+.dark-theme .mobile-menu-overlay {
+    background-color: rgba(40, 42, 54, 0.95); /* Dracula background with opacity */
+}
+
+.dark-theme .mobile-nav-link {
+    color: var(--text);
+}
+
+.dark-theme .mobile-menu-toggle .bar {
+    background-color: var(--text);
+}
