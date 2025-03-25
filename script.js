@@ -89,3 +89,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Add to script.js
+document.addEventListener("DOMContentLoaded", function () {
+    // Existing code...
+
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    mobileMenuToggle.addEventListener('click', function() {
+        mobileMenuToggle.classList.toggle('active');
+        mobileMenuOverlay.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+        });
+    });
+});
