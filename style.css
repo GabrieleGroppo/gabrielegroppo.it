@@ -1089,3 +1089,28 @@ body {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 16.5l-6-6 1.5-1.5L12 13.5l4.5-4.5L18 10.5l-6 6z"/></svg>');
 }
 
+/* back button style */
+.back-btn {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #ff92d0;
+}
+
+/* Style for links */
+.link-class {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+/* Style for links in dark theme */
+.dark-theme .link-class {
+    color: #ff79c6;
+}
+
