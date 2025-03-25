@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const elementsToAnimate = [
         { id: "cli-title", text: "whomi", prompt: "gabriele@linux:~$ " },
         { id: "experiences-title", text: "cat education.log", prompt: "gabriele@linux:~$ " },
-        { id: "work-title", text: "tail -f work_experience.log", prompt: "gabriele@linux:~$ " }
+        { id: "work-title", text: "tail work_exp.log", prompt: "gabriele@linux:~$ " }
     ];
 
     // Anima ciascun elemento
