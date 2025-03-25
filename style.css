@@ -1015,14 +1015,14 @@ body {
     left: 3px;
     width: 19px;
     height: 19px;
-    background-color: white;
+    background-color: transparent;
     border-radius: 50%;
     transition: transform 0.3s;
 }
 
 .theme-toggle-checkbox:checked + .theme-toggle-label::after {
     transform: translateX(25px);
-    background-color: #f8f8f2;
+    background-color: transparent;
 }
 
 /* Update existing styles to use theme variables */
