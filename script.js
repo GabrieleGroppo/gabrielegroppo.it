@@ -111,3 +111,45 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// Add to script.js
+document.addEventListener("DOMContentLoaded", function () {
+    // Existing code...
+
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle-checkbox');
+    
+    // Check for saved theme preference or system preference
+    const savedTheme = localStorage.getItem('site-theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Set initial theme
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark.matches)) {
+        document.documentElement.classList.add('dark-theme');
+        themeToggle.checked = true;
+    }
+
+    // Theme toggle event listener
+    themeToggle.addEventListener('change', function() {
+        if (this.checked) {
+            document.documentElement.classList.add('dark-theme');
+            localStorage.setItem('site-theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark-theme');
+            localStorage.setItem('site-theme', 'light');
+        }
+    });
+
+    // Listen for system theme changes
+    systemPrefersDark.addListener(function(e) {
+        if (e.matches) {
+            document.documentElement.classList.add('dark-theme');
+            themeToggle.checked = true;
+            localStorage.setItem('site-theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark-theme');
+            themeToggle.checked = false;
+            localStorage.setItem('site-theme', 'light');
+        }
+    });
+});
