@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Ottieni riferimenti ai titoli
     const elementsToAnimate = [
-        { id: "cli-title", text: "whomi", prompt: "gabriele@linux:~$ " },
+        { id: "cli-title", text: "whoami", prompt: "gabriele@linux:~$ " },
         { id: "experiences-title", text: "cat education.log", prompt: "gabriele@linux:~$ " },
         { id: "work-title", text: "tail work_exp.log", prompt: "gabriele@linux:~$ " }
     ];
