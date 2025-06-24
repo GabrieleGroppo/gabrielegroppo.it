@@ -527,6 +527,14 @@ section {
     z-index: 2;
 }
 
+.timeline-dot-volunteer {
+    position: absolute;
+    top: 20px;
+    left: 50.55%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
 .timeline-content {
     position: relative;
     width: calc(50% - 40px);
@@ -1135,30 +1143,6 @@ body {
     color: #ff79c6;
 }
 
-.volunteer-timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 0;
-}
-
-.volunteer-timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background-color: var(--accent);
-    transform: translateX(-50%);
-}
-
-.volunteer-item {
-    position: relative;
-    margin-bottom: 60px;
-    width: 100%;
-}
-
 .volunteer-dot {
     position: absolute;
     top: 20px;
@@ -1171,70 +1155,17 @@ body {
     z-index: 2;
 }
 
-.volunteer-content {
-    position: relative;
-    width: calc(50% - 40px);
-    padding: 20px;
-    background-color: var(--sepia-light);
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.volunteer-content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.volunteer-item:nth-child(odd) .volunteer-content {
-    left: 0;
-}
-
-.volunteer-item:nth-child(even) .volunteer-content {
-    left: calc(50% + 40px);
-}
-
-.volunteer-date {
-    display: inline-block;
-    padding: 5px 15px;
+.volunteer-color {
     background-color: #ff6b6b;
-    color: white;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
 }
 
-.volunteer-title {
-    margin-bottom: 5px;
-    margin-top: 80px;
+.work-color {
+    background-color: #bd93f9;
 }
 
-.volunteer-organization {
-    font-style: italic;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    color: var(--accent);
-}
-
-.volunteer-description {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.volunteer-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-.volunteer-highlight {
-    background-color: var(--sepia-dark);
-    color: var(--text);
-    padding: 3px 10px;
-    border-radius: 15px;
-    font-size: 0.8rem;
+.education-color {
+    background-color: #50fa7b;
+    
 }
 
 .rotaract-icon {
