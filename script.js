@@ -1,3 +1,5 @@
+window.onload = fetchGitHubRepos();
+
 document.addEventListener("DOMContentLoaded", function () {
     // Ottieni riferimenti ai titoli
     const elementsToAnimate = [
@@ -165,3 +167,53 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// Fetch GitHub repositories and display them
+async function fetchGitHubRepos() {
+    try {
+        const response = await fetch("https://api.github.com/users/GabrieleGroppo/repos?sort=updated&per_page=100");
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const repos = await response.json();
+        displayRepos(repos);
+    } catch (error) {
+        console.error("Error fetching GitHub repositories:", error);
+    }
+}
+
+function displayRepos(repos) {
+    const reposContainer = document.getElementById("project-grid");
+    reposContainer.innerHTML = ""; // Clear existing content
+
+    repos.forEach(repo => {
+        // log
+        console.log(`Repository: ${repo.name}, Updated at: ${repo.updated_at}`);
+
+        /*`<div class="project-card">
+                <div class="project-content">
+                    <h3 class="project-title">Butter Tasks</h3>
+                    <p class="project-text">A good looking, cross-platform & open source task manager written in Flutter.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/GabrieleGroppo/ButterTasks" class="project-link">Vedi
+                            progetto</a>
+                    </div>
+                </div>
+            </div>`*/
+
+        const repoCard = document.createElement("div");
+        repoCard.className = "project-card";
+        repoCard.innerHTML = `
+            <div class="project-content">
+                <h3 class="project-title">${repo.name}</h3>
+                <p class="project-text">${repo.description || "No description available."}</p>
+                
+                <p class="project-updated">Last update: ${new Date(repo.updated_at).toLocaleDateString()}</p><br>
+                <div class="project-links">
+                    <a href="${repo.html_url}" class="project-link" target="_blank">Vedi progetto</a>
+                </div>
+            </div>
+        `;
+        reposContainer.appendChild(repoCard);
+    });
+}
