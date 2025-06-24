@@ -182,7 +182,7 @@ const themeToggle = document.getElementById('theme-toggle-checkbox');
         // CLI typing animation
         document.addEventListener("DOMContentLoaded", function () {
             const cliTitle = document.getElementById('volunteer-title');
-            const text = "cat volunteer_activity.log";
+            const text = "cat volunteer.md";
             const prompt = "gabriele@linux:~$ ";
             
             let animated = false;
