@@ -156,6 +156,69 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+const themeToggle = document.getElementById('theme-toggle-checkbox');
+        
+        // Check for saved theme preference or system preference
+        const savedTheme = localStorage.getItem('site-theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        // Set initial theme
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark.matches)) {
+            document.documentElement.classList.add('dark-theme');
+            themeToggle.checked = true;
+        }
+
+        // Theme toggle event listener
+        themeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                document.documentElement.classList.add('dark-theme');
+                localStorage.setItem('site-theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark-theme');
+                localStorage.setItem('site-theme', 'light');
+            }
+        });
+
+        // CLI typing animation
+        document.addEventListener("DOMContentLoaded", function () {
+            const cliTitle = document.getElementById('volunteer-title');
+            const text = "cat volunteer_activity.log";
+            const prompt = "gabriele@linux:~$ ";
+            
+            let animated = false;
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animated) {
+                        animated = true;
+                        startTypingAnimation();
+                    } else if (!entry.isIntersecting) {
+                        animated = false;
+                        cliTitle.innerHTML = `<span class="prompt" style="color: #8BE9FD;">${prompt}</span><span class="cursor">█</span>`;
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            observer.observe(cliTitle);
+
+            function startTypingAnimation() {
+                let index = 0;
+                const color = "#FF6B6B"; // Red color for volunteer section
+                
+                function typeNextCharacter() {
+                    if (index < text.length) {
+                        cliTitle.innerHTML = `<span class="prompt" style="color: #8BE9FD;">${prompt}</span><span style="color: ${color};">${text.substring(0, index + 1)}</span><span class="cursor" style="color: ${color}">█</span>`;
+                        index++;
+                        setTimeout(typeNextCharacter, 100);
+                    } else {
+                        cliTitle.innerHTML = `<span class="prompt" style="color: #8BE9FD;">${prompt}</span><span style="color: ${color};">${text}</span><span class="cursor" style="color: ${color}">█</span>`;
+                    }
+                }
+
+                setTimeout(typeNextCharacter, 300);
+            }
+        });
+
 document.addEventListener("DOMContentLoaded", function () {
     const scrollIndicator = document.querySelector(".scroll-down");
 
