@@ -239,15 +239,6 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.download-resume {
-    background-color: #ff79c6;
-    /* Dracula pink */
-}
-
-.download-resume:hover {
-    background-color: #ff92d0;
-}
-
 .cta-container {
     text-align: center;
     margin-top: 50px;
@@ -1165,11 +1156,15 @@ body {
 
 .education-color {
     background-color: #50fa7b;
-    
+
 }
 
 .rotaract-icon {
     font-size: 2rem;
     color: #ff6b6b;
     margin-right: 10px;
+}
+
+.volunteer-color-text {
+    color: #ff6b6b;
 }
