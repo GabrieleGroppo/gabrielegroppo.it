@@ -65,7 +65,7 @@ function setupTypingAnimation(element, text, prompt, color) {
 
     function startTypingAnimation(element, text, prompt, color) {
         let index = 0;
-        
+
         function typeNextCharacter() {
             if (index < text.length) {
                 element.innerHTML = `<span class="prompt" style="color: #8BE9FD;">${prompt}</span><span style="color: ${color};">${text.substring(0, index + 1)}</span><span class="cursor" style="color: ${color}">█</span>`;
@@ -93,14 +93,14 @@ function initMobileMenu() {
     if (!mobileMenuToggle || !mobileMenuOverlay) return;
 
     // Toggle del menu mobile
-    mobileMenuToggle.addEventListener('click', function() {
+    mobileMenuToggle.addEventListener('click', function () {
         mobileMenuToggle.classList.toggle('active');
         mobileMenuOverlay.classList.toggle('active');
     });
 
     // Chiude il menu quando si clicca su un link
     mobileNavLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             mobileMenuToggle.classList.remove('active');
             mobileMenuOverlay.classList.remove('active');
         });
@@ -114,7 +114,7 @@ function initMobileMenu() {
 function initThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle-checkbox');
     if (!themeToggle) return;
-    
+
     // Verifica le preferenze salvate o di sistema
     const savedTheme = localStorage.getItem('site-theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -126,7 +126,7 @@ function initThemeToggle() {
     }
 
     // Event listener per il toggle del tema
-    themeToggle.addEventListener('change', function() {
+    themeToggle.addEventListener('change', function () {
         if (this.checked) {
             document.documentElement.classList.add('dark-theme');
             localStorage.setItem('site-theme', 'dark');
@@ -137,7 +137,7 @@ function initThemeToggle() {
     });
 
     // Ascolta i cambiamenti del tema di sistema
-    systemPrefersDark.addEventListener('change', function(e) {
+    systemPrefersDark.addEventListener('change', function (e) {
         if (!localStorage.getItem('site-theme')) {
             if (e.matches) {
                 document.documentElement.classList.add('dark-theme');
@@ -160,7 +160,7 @@ function initScrollEffects() {
 
     window.addEventListener('scroll', function () {
         const scrollY = window.scrollY;
-        
+
         // Gestione navbar
         if (navbar) {
             if (scrollY > 100) {
@@ -169,7 +169,7 @@ function initScrollEffects() {
                 navbar.classList.remove('scrolled');
             }
         }
-        
+
         // Gestione indicatore di scroll
         if (scrollIndicator) {
             if (scrollY > 100) {
@@ -206,7 +206,7 @@ async function fetchGitHubRepos() {
 function displayRepos(repos) {
     const reposContainer = document.getElementById("project-grid");
     if (!reposContainer) return;
-    
+
     reposContainer.innerHTML = ""; // Pulisce il contenuto esistente
 
     repos.forEach(repo => {
@@ -240,5 +240,35 @@ function escapeHtml(text) {
         '"': '&quot;',
         "'": '&#039;'
     };
-    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    return text.replace(/[&<>"']/g, function (m) { return map[m]; });
 }
+
+// ========================================
+// TERMS MODAL
+// ========================================
+
+function openTermsModal() {
+    const modal = document.getElementById('termsModal');
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeTermsModal() {
+    const modal = document.getElementById('termsModal');
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Close modal when clicking outside of it
+document.getElementById('termsModal').addEventListener('click', function (e) {
+    if (e.target === this) {
+        closeTermsModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        closeTermsModal();
+    }
+});
