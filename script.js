@@ -129,40 +129,43 @@ function initMobileMenu() {
 // ========================================
 
 function initThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle-checkbox');
-    if (!themeToggle) return;
+    const themeButton = document.getElementById('theme-toggle-button');
+    const sunIcon = document.getElementById('theme-icon-sun');
+    const moonIcon = document.getElementById('theme-icon-moon');
+    if (!themeButton || !sunIcon || !moonIcon) return;
 
-    // Verifica le preferenze salvate o di sistema
     const savedTheme = localStorage.getItem('site-theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // Imposta il tema iniziale
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark.matches)) {
-        document.documentElement.classList.add('dark-theme');
-        themeToggle.checked = true;
-    }
-
-    // Event listener per il toggle del tema
-    themeToggle.addEventListener('change', function () {
-        if (this.checked) {
+    function setTheme(dark) {
+        if (dark) {
             document.documentElement.classList.add('dark-theme');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'inline';
             localStorage.setItem('site-theme', 'dark');
         } else {
             document.documentElement.classList.remove('dark-theme');
+            sunIcon.style.display = 'inline';
+            moonIcon.style.display = 'none';
             localStorage.setItem('site-theme', 'light');
         }
+    }
+
+    // Imposta il tema iniziale
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark.matches)) {
+        setTheme(true);
+    } else {
+        setTheme(false);
+    }
+
+    themeButton.addEventListener('click', function () {
+        const isDark = document.documentElement.classList.contains('dark-theme');
+        setTheme(!isDark);
     });
 
-    // Ascolta i cambiamenti del tema di sistema
     systemPrefersDark.addEventListener('change', function (e) {
         if (!localStorage.getItem('site-theme')) {
-            if (e.matches) {
-                document.documentElement.classList.add('dark-theme');
-                themeToggle.checked = true;
-            } else {
-                document.documentElement.classList.remove('dark-theme');
-                themeToggle.checked = false;
-            }
+            setTheme(e.matches);
         }
     });
 }

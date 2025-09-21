@@ -33,15 +33,7 @@
     <div class="stars" id="stars"></div>
     <!-- Update to index.html -->
     <nav class="nav" id="navbar">
-        <div class="logo">Gabriele Groppo</div>
-        <div class="theme-toggle">
-            <input type="checkbox" id="theme-toggle-checkbox" class="theme-toggle-checkbox">
-            <label for="theme-toggle-checkbox" class="theme-toggle-label">
-                <span class="theme-toggle-sun">☀️</span>
-                <span class="theme-toggle-moon">🌙</span>
-            </label>
-        </div>
-        <div class="nav-links">
+    <div class="nav-links">
             <a href="index.html#about" class="nav-link">Whoami</a>
             <a href="index.html#experiences" class="nav-link">Experiences</a>
             <a href="/resume.pdf" class="nav-link">CV</a>
@@ -50,6 +42,10 @@
             <!--<a href="index.html#github-activity" class="nav-link">GitHub</a>-->
             <a href="index.html#contact" class="nav-link">Contacts</a>
         </div>
+        <button class="theme-toggle-button" id="theme-toggle-button" aria-label="Toggle theme" style="margin-left: 20px; background: none; border: none; cursor: pointer; font-size: 1.7rem; color: var(--accent);">
+            <i class="fa-solid fa-sun" id="theme-icon-sun" style="display:inline;"></i>
+            <i class="fa-solid fa-moon" id="theme-icon-moon" style="display:none;"></i>
+        </button>
         <!-- Add mobile menu toggle -->
         <div class="mobile-menu-toggle" id="mobile-menu-toggle">
             <span class="bar"></span>
@@ -456,7 +452,6 @@
             </a>
     </section>
     <!-- Back to top -->
-    <a class="back-to-top" href="#home-hero"><i class="fa fa-arrow-up"></i></a>
     <!-- Footer -->
     <footer>
         <!-- make icons bigger -->
@@ -481,6 +476,37 @@
         </div>
     </footer>
     <script src="script.js"></script>
+
+<script>
+    const themeToggleBtn = document.getElementById('theme-toggle-button');
+    const sunIcon = document.getElementById('theme-icon-sun');
+    const moonIcon = document.getElementById('theme-icon-moon');
+    function setTheme(dark) {
+        if (dark) {
+            document.documentElement.classList.add('dark-theme');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'inline';
+            localStorage.setItem('site-theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark-theme');
+            sunIcon.style.display = 'inline';
+            moonIcon.style.display = 'none';
+            localStorage.setItem('site-theme', 'light');
+        }
+    }
+    // Initial theme
+    const savedTheme = localStorage.getItem('site-theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark.matches)) {
+        setTheme(true);
+    } else {
+        setTheme(false);
+    }
+    themeToggleBtn.addEventListener('click', function () {
+        const isDark = document.documentElement.classList.contains('dark-theme');
+        setTheme(!isDark);
+    });
+</script>
 </body>
 
 </html>

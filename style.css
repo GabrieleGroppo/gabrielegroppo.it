@@ -258,13 +258,15 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 16px;
+    font-size: 22px;
+    color: #FFD700;
     transition: transform 0.3s, opacity 0.3s;
 }
 
 .theme-toggle-sun {
     left: 3px;
     opacity: 1;
+    color: #FFA500;
 }
 
 .theme-toggle-moon {
@@ -473,6 +475,25 @@ body {
 .cta-container {
     text-align: center;
     margin-top: 50px;
+}
+
+.toggle-theme-button-on-page {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--accent);
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 99;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    opacity: 0.7;
 }
 
 .back-to-top {
