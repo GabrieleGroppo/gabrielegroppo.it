@@ -1,3 +1,61 @@
+.interest-icon-keyboard {
+    color: #f59e42; /* arancione tastiera */
+    background: rgba(245, 158, 66, 0.1);
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.interest-icon-java {
+    color: #e76f00; /* arancione Java */
+    background: rgba(231, 111, 0, 0.1);
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.interest-icon-docker {
+    color: #2496ed; /* blu Docker */
+    background: rgba(36, 150, 237, 0.1);
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ============================
+   INTERESTS CARD ICONS CUSTOM
+   ============================ */
+.interest-icon-mountain {
+    color: #3b82f6; /* blu vivo */
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.interest-icon-design {
+    color: #a259e6; /* viola acceso */
+    background: rgba(162, 89, 230, 0.1);
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* ============================
    CSS VARIABLES & RESET
    ============================ */
