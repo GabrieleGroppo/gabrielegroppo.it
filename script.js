@@ -1,3 +1,20 @@
+// ============================
+// INTEREST CARDS RANDOM COLOR
+// ============================
+document.addEventListener("DOMContentLoaded", function () {
+    const icons = document.querySelectorAll('.interest-card-icon');
+    icons.forEach(icon => {
+        // Genera un colore pastello randomico
+        const color = getRandomColor();
+        icon.style.background = color;
+    });
+});
+
+function getRandomColor() {
+    // Colori pastello per un look gradevole
+    const hue = Math.floor(Math.random() * 360);
+    return `hsl(${hue}, 70%, 85%)`;
+}
 // Inizializza il caricamento dei repository GitHub
 window.onload = fetchGitHubRepos;
 
