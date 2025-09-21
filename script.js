@@ -16,7 +16,7 @@ function getRandomColor() {
     return `hsl(${hue}, 70%, 85%)`;
 }
 // Inizializza il caricamento dei repository GitHub
-window.onload = fetchGitHubRepos;
+//window.onload = fetchGitHubRepos;
 
 document.addEventListener("DOMContentLoaded", function () {
     // Inizializza tutte le funzionalità
@@ -201,7 +201,7 @@ function initScrollEffects() {
 // ========================================
 // REPOSITORY GITHUB
 // ========================================
-
+/*
 async function fetchGitHubRepos() {
     try {
         const response = await fetch("https://api.github.com/users/GabrieleGroppo/repos?sort=updated&per_page=100");
@@ -244,7 +244,7 @@ function displayRepos(repos) {
         reposContainer.appendChild(repoCard);
     });
 }
-
+*/
 // ========================================
 // UTILITY FUNCTIONS
 // ========================================
