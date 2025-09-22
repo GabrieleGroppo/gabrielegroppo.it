@@ -1,31 +1,3 @@
-// ============================
-// INTEREST CARDS RANDOM COLOR
-// ============================
-document.addEventListener("DOMContentLoaded", function () {
-    const icons = document.querySelectorAll('.interest-card-icon');
-    icons.forEach(icon => {
-        // Genera un colore pastello randomico
-        const color = getRandomColor();
-        icon.style.background = color;
-    });
-});
-
-function getRandomColor() {
-    // Colori pastello per un look gradevole
-    const hue = Math.floor(Math.random() * 360);
-    return `hsl(${hue}, 70%, 85%)`;
-}
-// Inizializza il caricamento dei repository GitHub
-//window.onload = fetchGitHubRepos;
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Inizializza tutte le funzionalità
-    initTypingAnimations();
-    initMobileMenu();
-    initThemeToggle();
-    initScrollEffects();
-});
-
 // ========================================
 // ANIMAZIONI DI DIGITAZIONE CLI
 // ========================================
@@ -201,53 +173,6 @@ function initScrollEffects() {
     });
 }
 
-// ========================================
-// REPOSITORY GITHUB
-// ========================================
-/*
-async function fetchGitHubRepos() {
-    try {
-        const response = await fetch("https://api.github.com/users/GabrieleGroppo/repos?sort=updated&per_page=100");
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const repos = await response.json();
-        displayRepos(repos);
-    } catch (error) {
-        console.error("Error fetching GitHub repositories:", error);
-        // Mostra un messaggio di errore all'utente se necessario
-        const reposContainer = document.getElementById("project-grid");
-        if (reposContainer) {
-            reposContainer.innerHTML = '<p>Errore nel caricamento dei progetti. Riprova più tardi.</p>';
-        }
-    }
-}
-
-function displayRepos(repos) {
-    const reposContainer = document.getElementById("project-grid");
-    if (!reposContainer) return;
-
-    reposContainer.innerHTML = ""; // Pulisce il contenuto esistente
-
-    repos.forEach(repo => {
-        console.log(`Repository: ${repo.name}, Updated at: ${repo.updated_at}`);
-
-        const repoCard = document.createElement("div");
-        repoCard.className = "project-card";
-        repoCard.innerHTML = `
-            <div class="project-content">
-                <h3 class="project-title">${escapeHtml(repo.name)}</h3>
-                <p class="project-text">${escapeHtml(repo.description || "No description available.")}</p>
-                <p class="project-updated">Last update: ${new Date(repo.updated_at).toLocaleDateString()}</p><br>
-                <div class="project-links">
-                    <a href="${escapeHtml(repo.html_url)}" class="project-link" target="_blank" rel="noopener noreferrer">Vedi progetto</a>
-                </div>
-            </div>
-        `;
-        reposContainer.appendChild(repoCard);
-    });
-}
-*/
 // ========================================
 // UTILITY FUNCTIONS
 // ========================================

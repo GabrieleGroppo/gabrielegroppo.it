@@ -27,13 +27,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 
 <body>
     <div class="stars" id="stars"></div>
     <!-- Update to index.html -->
     <nav class="nav" id="navbar">
-    <div class="nav-links">
+        <div class="nav-links">
             <a href="index.html#about" class="nav-link">Whoami</a>
             <a href="index.html#experiences" class="nav-link">Experiences</a>
             <a href="/resume.pdf" class="nav-link">CV</a>
@@ -42,7 +43,8 @@
             <!--<a href="index.html#github-activity" class="nav-link">GitHub</a>-->
             <a href="index.html#contact" class="nav-link">Contacts</a>
         </div>
-        <button class="theme-toggle-button" id="theme-toggle-button" aria-label="Toggle theme" style="margin-left: 20px; background: none; border: none; cursor: pointer; font-size: 1.7rem; color: var(--accent);">
+        <button class="theme-toggle-button" id="theme-toggle-button" aria-label="Toggle theme"
+            style="margin-left: 20px; background: none; border: none; cursor: pointer; font-size: 1.7rem; color: var(--accent);">
             <i class="fa-solid fa-sun" id="theme-icon-sun" style="display:inline;"></i>
             <i class="fa-solid fa-moon" id="theme-icon-moon" style="display:none;"></i>
         </button>
@@ -164,7 +166,6 @@
         </div>
         <a href="#about" class="scroll-down"></a>
     </section>
-
     <section class="about" id="about">
         <!-- Removed redundant section-title for clearer CLI-style intention -->
         <div class="about-img">
@@ -186,63 +187,6 @@
             </p>
         </div>
     </section>
-    <!--<section class="interests" id="interests">
-        <div class="interests-grid">
-            
-            <div class="interest-card interest-java">
-                <div class="interest-card-bg"></div>
-                <div class="interest-card-header">
-                    <div class="interest-card-icon interest-icon-java">
-                        <i class="fab fa-java"></i>
-                    </div>
-                    <div>
-                        <h3 class="interest-card-title">Preferred Language</h3>
-                        <p class="interest-card-value">Java</p>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="interest-card interest-os">
-                <div class="interest-card-bg"></div>
-                <div class="interest-card-header">
-                    <div class="interest-card-icon interest-icon-os">
-                        <i class="fab fa-fedora"></i>
-                    </div>
-                    <div>
-                        <h3 class="interest-card-title">Current OS</h3>
-                        <p class="interest-card-value">Fedora Linux</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="interest-card interest-mountain">
-                <div class="interest-card-bg"></div>
-                <div class="interest-card-header">
-                    <div class="interest-card-icon interest-icon-mountain">
-                        <i class="fas fa-mountain"></i>
-                    </div>
-                    <div>
-                        <h3 class="interest-card-title">Passion</h3>
-                        <p class="interest-card-value">Mountains</p>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="interest-card interest-design">
-                <div class="interest-card-bg"></div>
-                <div class="interest-card-header">
-                    <div class="interest-card-icon interest-icon-design">
-                        <i class="fas fa-pencil-ruler"></i>
-                    </div>
-                    <div>
-                        <h3 class="interest-card-title">Interest</h3>
-                        <p class="interest-card-value">Design</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>  -->
     <section class="timeline-section" id="experiences">
         <h1 class="section-title">Experiences</h1>
         <h2 class="cli-title" id="experiences-title">cat education.log</h2>
@@ -431,11 +375,6 @@
             </div>
         </div>
     </section>
-    <!--<section class="github-section" id="github-activity">
-        <h2 class="section-title">GitHub Activity</h2>
-    </section>-->
-
-
     <section class="contact" id="contact">
         <h2 class="section-title">Contact me!</h2>
         <div class="contact-info">
@@ -447,10 +386,8 @@
                 gabriele.groppo03@gmail.com
             </a>
     </section>
-    <!-- Back to top -->
     <!-- Footer -->
     <footer>
-        <!-- make icons bigger -->
         <p class="footer-text">Thank you!</p>
         <a href="#" onclick="openTermsModal(); return false;" class="link-class">Privacy & Terms</a>
         <div class="social-links">
@@ -471,38 +408,6 @@
             </a>
         </div>
     </footer>
-    <script src="script.js"></script>
-
-<script>
-    const themeToggleBtn = document.getElementById('theme-toggle-button');
-    const sunIcon = document.getElementById('theme-icon-sun');
-    const moonIcon = document.getElementById('theme-icon-moon');
-    function setTheme(dark) {
-        if (dark) {
-            document.documentElement.classList.add('dark-theme');
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'inline';
-            localStorage.setItem('site-theme', 'dark');
-        } else {
-            document.documentElement.classList.remove('dark-theme');
-            sunIcon.style.display = 'inline';
-            moonIcon.style.display = 'none';
-            localStorage.setItem('site-theme', 'light');
-        }
-    }
-    // Initial theme
-    const savedTheme = localStorage.getItem('site-theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark.matches)) {
-        setTheme(true);
-    } else {
-        setTheme(false);
-    }
-    themeToggleBtn.addEventListener('click', function () {
-        const isDark = document.documentElement.classList.contains('dark-theme');
-        setTheme(!isDark);
-    });
-</script>
 </body>
 
 </html>
