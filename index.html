@@ -514,63 +514,51 @@
         }
     </style>
     <script>
+
         // ========================================
         // ANIMAZIONI DI DIGITAZIONE CLI
         // ========================================
-
         function initTypingAnimations() {
             // Definisce tutti gli elementi da animare
             const elementsToAnimate = [
                 { id: "cli-title", text: "whoami", prompt: "gabriele@linux:~$ ", color: "#F1FA8C" },
                 { id: "experiences-title", text: "cat education.log", prompt: "gabriele@linux:~$ ", color: "#50FA7B" },
                 { id: "work-title", text: "tail work_exp.log", prompt: "gabriele@linux:~$ ", color: "#BD93F9" },
-                { id: "volunteer-title", text: "cat volunteer.md", prompt: "gabriele@linux:~$ ", color: "#FF6B6B" }
+                { id: "volunteer-title", text: "cat volunteer.md", prompt: "gabriele@linux:~$ ", color: "#FF6B6B" },
+                { id: "hero-typing", text: "echo \"Welcome to my portfolio!\"", prompt: "gabriele@linux:~$ ", color: "#8BE9FD" }
             ];
-
-            // Configura l'animazione per ogni elemento
             elementsToAnimate.forEach(elem => {
                 const element = document.getElementById(elem.id);
                 if (element) {
-                    // Assicura che abbia la classe corretta
-                    if (!element.classList.contains('cli-title')) {
+                    if (!element.classList.contains('cli-title') && elem.id !== 'hero-typing') {
                         element.classList.add('cli-title');
                     }
-                    // Inizializza con prompt e cursore
                     element.innerHTML = `<span class="prompt" style="color: #8BE9FD;">${elem.prompt}</span><span class="cursor">█</span>`;
-                    // Configura l'animazione
                     setupTypingAnimation(element, elem.text, elem.prompt, elem.color);
                 }
             });
         }
-
         function setupTypingAnimation(element, text, prompt, color) {
             let animated = false;
             let currentAnimation = null;
-
-            // Configura l'observer per l'animazione al scroll
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting && !animated) {
                         animated = true;
                         startTypingAnimation(element, text, prompt, color);
                     } else if (!entry.isIntersecting) {
-                        // Reset quando esce dalla vista
                         animated = false;
                         if (currentAnimation) {
                             clearTimeout(currentAnimation);
                             currentAnimation = null;
                         }
-                        // Reimposta solo con il prompt
                         element.innerHTML = `<span class="prompt" style="color: #8BE9FD;">${prompt}</span><span class="cursor">█</span>`;
                     }
                 });
             }, { threshold: 0.2 });
-
             observer.observe(element);
-
             function startTypingAnimation(element, text, prompt, color) {
                 let index = 0;
-
                 function typeNextCharacter() {
                     if (index < text.length) {
                         element.innerHTML = `<span class="prompt" style="color: #8BE9FD;">${prompt}</span><span style="color: ${color};">${text.substring(0, index + 1)}</span><span class="cursor" style="color: ${color}">█</span>`;
@@ -580,8 +568,6 @@
                         element.innerHTML = `<span class="prompt" style="color: #8BE9FD;">${prompt}</span><span style="color: ${color};">${text}</span><span class="cursor" style="color: ${color}">█</span>`;
                     }
                 }
-
-                // Avvia con un piccolo ritardo
                 currentAnimation = setTimeout(typeNextCharacter, 300);
             }
         }
@@ -593,22 +579,26 @@
         function initMobileMenu() {
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileMenuContent = document.querySelector('.mobile-menu-content');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
             if (!mobileMenuToggle || !mobileMenuOverlay) return;
-
-            // Toggle del menu mobile
             mobileMenuToggle.addEventListener('click', function () {
                 mobileMenuToggle.classList.toggle('active');
                 mobileMenuOverlay.classList.toggle('active');
             });
-
             // Chiude il menu quando si clicca su un link
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', function () {
                     mobileMenuToggle.classList.remove('active');
                     mobileMenuOverlay.classList.remove('active');
                 });
+            });
+            // Chiude il menu quando si clicca fuori dal contenuto
+            mobileMenuOverlay.addEventListener('click', function (e) {
+                if (e.target === mobileMenuOverlay) {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenuOverlay.classList.remove('active');
+                }
             });
         }
 
@@ -846,9 +836,9 @@
             initThemeToggle();
             initScrollEffects();
             initSmoothScroll();
+            initTypingAnimations();
+            initMobileMenu();
         });
-        initTypingAnimations();
-        initMobileMenu();
 
     </script>
     <div class="stars" id="stars"></div>
@@ -1008,15 +998,10 @@
         <div class="hero-content">
             <h1 class="hero-title" id="home-title">Hi there! I'm Gabriele</h1>
             <p class="hero-subtitle">Software Engineer & Developer</p>
-
-            <!-- Terminal-style typing effect -->
+            <!-- Terminal-style typing effect with animated CLI typing -->
             <div class="typing-container">
-                <div class="terminal-line">
-                    <span class="prompt">gabriele@linux:~$ </span>
-                    <span class="typing-text">echo "Welcome to my portfolio!"</span>
-                </div>
+                <div class="terminal-line" id="hero-typing"></div>
             </div>
-
             <a href="#projects" class="cta-button">Discover my projects</a>
         </div>
 
