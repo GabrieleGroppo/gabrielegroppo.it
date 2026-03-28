@@ -37,7 +37,7 @@ reveals.forEach(r => ro.observe(r));
 const phrases = [
     '"Welcome to my portfolio!"',
     'git commit -m "cool stuff"',
-    'kubectl apply -f kubepattern.yml',
+    'helm install kubepattern .',
 ];
 let pi = 0, ci = 0, deleting = false;
 const typed = document.getElementById('hero-typed');
