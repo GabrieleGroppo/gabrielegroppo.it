@@ -884,3 +884,8 @@ footer a:hover {
         padding: 8px 12px;
     }
 }
+
+/* Rimuove il fastidioso riquadro blu al tap su mobile */
+a, button, .btn, .nav-item, .scroll-hint {
+    -webkit-tap-highlight-color: transparent;
+}
