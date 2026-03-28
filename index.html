@@ -46,8 +46,8 @@
     <section id="home" style="position:relative;">
         <p class="hero-eyebrow">gabriele@linux:~$</p>
         <h1 class="hero-name">Gabriele<br>Groppo.</h1>
-        <p class="hero-role">Software Engineer & CS student at UniMiB.<br>Building tools at the intersection of cloud &
-            open source.</p>
+        <p class="hero-role">Software & Platform Engineer | CS Graduate at UniMiB.<br>Building tools at the intersection
+            of cloud native & open source.</p>
         <div class="terminal-pill">
             <span class="prompt">~/portfolio</span>
             <span class="typed" id="hero-typed"></span>
@@ -73,20 +73,21 @@
             </div>
             <div>
                 <p class="about-text">
-                    I'm a <b>Computer Science student at UniMiB</b> with a deep passion for
-                    <b>Software Engineering</b> and Cloud infrastructure. I love <b>Linux</b> and the open source
-                    philosophy.
+                    I'm a <b>Computer Science graduate at UniMiB</b> with a deep passion for
+                    <b>Software & Platform Engineering</b> and Cloud Native infrastructure. I love <b>Linux</b> and the
+                    open source philosophy.
                     <br><br>
-                    Currently working as a <b>Software & Platform Engineer Intern at Sigemi</b>, developing a static
-                    analysis tool to recognise Kubernetes architectural patterns and improve cluster quality.
+                    Currently working as a <b>Junior Platform Engineer Intern at Sigemi</b>, where I co-design an
+                    Internal Developer Platform and develop <b>KubePattern</b>, an open-source tool written in <b>Go</b>
+                    to automatically detect architectural smells and orphaned resources in Kubernetes clusters.
                 </p>
                 <div class="about-chips">
                     <span class="chip">Kubernetes</span>
-                    <span class="chip">Java</span>
+                    <span class="chip">Go</span>
+                    <span class="chip">Platform Engineering</span>
                     <span class="chip">Linux</span>
-                    <span class="chip">Open Source</span>
                     <span class="chip">Flutter</span>
-                    <span class="chip">Spring Boot</span>
+                    <span class="chip">Java</span>
                 </div>
             </div>
         </div>
@@ -103,14 +104,14 @@
                 <div>
                     <p class="featured-eyebrow"><i class="fas fa-star"></i> &nbsp;Featured Project</p>
                     <h3 class="featured-title">KubePattern</h3>
-                    <p class="featured-desc">A powerful static analysis tool that identifies architectural patterns and
-                        configuration smells in Kubernetes clusters. Built with a graph-based approach to automatically
-                        detect patterns like Sidecar, Health Probe, and Predictable Demands.</p>
+                    <p class="featured-desc">An open-source <b>Go</b> application that introduces a "Pattern-as-Code"
+                        approach to automatically detect orphaned Kubernetes Custom Resources and hidden architectural
+                        smells across complex CR interactions. Deeply integrated with client-go for optimized cluster
+                        scanning.</p>
                     <div class="tech-row">
+                        <span class="tech-tag">Go</span>
                         <span class="tech-tag">Kubernetes</span>
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Helm</span>
-                        <span class="tech-tag">Pattern Recognition</span>
+                        <span class="tech-tag">Pattern-as-Code</span>
                         <span class="tech-tag">Static Analysis</span>
                     </div>
                     <div class="featured-actions">
@@ -157,44 +158,58 @@
         <p class="section-label reveal">my path</p>
         <h2 class="section-title reveal">Experiences.</h2>
 
-        <!-- Education -->
         <div class="timeline-group reveal">
             <p class="timeline-group-label"><i class="fas fa-graduation-cap"></i> &nbsp;Education</p>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot tl-edu"></div>
-                    <p class="tl-date">2026 — Present</p>
+                    <p class="tl-date">Starting Oct 2026</p>
                     <h3 class="tl-title">Master's Degree · Computer Science</h3>
                     <p class="tl-place">University of Milan Bicocca</p>
                     <div class="tl-tags">
-                        <span class="tl-tag">Algorithms</span>
-                        <span class="tl-tag">Software Engineering</span>
+                        <span class="tl-tag">Distributed Systems</span>
+                        <span class="tl-tag">Advanced Software Engineering</span>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot tl-edu"></div>
-                    <p class="tl-date">2022 — 2026</p>
+                    <p class="tl-date">Sept 2022 — Feb 2026</p>
                     <h3 class="tl-title">Bachelor's Degree · Computer Science</h3>
                     <p class="tl-place">University of Milan Bicocca</p>
-                    <p class="tl-desc">Hands-on projects in Java, algorithms, Android development, and data structures.
-                    </p>
+                    <p class="tl-desc">Graduated with 100/110. Key projects in Java, Android (MVVM), and full-stack
+                        microservices.</p>
                     <div class="tl-tags">
                         <span class="tl-tag">Java</span>
                         <span class="tl-tag">Algorithms</span>
-                        <span class="tl-tag">Android</span>
+                        <span class="tl-tag">Software Architecture</span>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot tl-edu"></div>
-                    <p class="tl-date">2017 — 2022</p>
+                    <p class="tl-date">Sept 2017 — Jun 2022</p>
                     <h3 class="tl-title">IT Diploma</h3>
                     <p class="tl-place">ITIS E. Alessandrini, Vittuone</p>
-                    <p class="tl-desc">OOP and relational databases.</p>
+                    <p class="tl-desc">Graduated with 100/100. Focused on OOP and relational databases.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-group reveal">
+            <p class="timeline-group-label"><i class="fas fa-briefcase"></i> &nbsp;Work</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot tl-work"></div>
+                    <p class="tl-date">Sept 2025 — Present</p>
+                    <h3 class="tl-title">Junior Platform Engineer Intern</h3>
+                    <p class="tl-place">Sigemi</p>
+                    <p class="tl-desc">Co-designed an Internal Developer Platform (PaaS) using Krateo Platform Ops.
+                        Engineered DevSecOps CI/CD pipelines and developed KubePattern in Go to detect orphaned Custom
+                        Resources. Enhanced observability with custom UI dashboards and ArgoCD integrations.</p>
                     <div class="tl-tags">
-                        <span class="tl-tag">Java</span>
-                        <span class="tl-tag">MySQL</span>
-                        <span class="tl-tag">JavaScript</span>
-                        <span class="tl-tag">C</span>
+                        <span class="tl-tag">Kubernetes</span>
+                        <span class="tl-tag">Go</span>
+                        <span class="tl-tag">CI/CD</span>
+                        <span class="tl-tag">DevSecOps</span>
                     </div>
                 </div>
             </div>
@@ -308,4 +323,5 @@
         </div>
     </div>
 </body>
+
 </html>
