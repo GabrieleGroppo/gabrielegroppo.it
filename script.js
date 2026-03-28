@@ -35,8 +35,8 @@ reveals.forEach(r => ro.observe(r));
 
 /* ====== TYPING ANIMATION ====== */
 const phrases = [
-    'echo "Welcome to my portfolio!"',
-    'git commit -m "cool stuffs"',
+    '"Welcome to my portfolio!"',
+    'git commit -m "cool stuff"',
     'kubectl apply -f kubepattern.yml',
 ];
 let pi = 0, ci = 0, deleting = false;
